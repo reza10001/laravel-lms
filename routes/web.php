@@ -36,6 +36,9 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth', 'admin'])->prefix('/panel')->group(function() {
     Route::resource('/users', UserController::class)->except(['show']);
-    Route::resource('/categories', CategoryController::class)->except(['show', 'create', 'edit']);
+    Route::resource('/categories', CategoryController::class)->except(['show', 'create']);
+    Route::resource('/posts', PostController::class)->except(['show']);
+
+    
 });
 require __DIR__.'/auth.php';
