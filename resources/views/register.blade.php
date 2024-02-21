@@ -1,8 +1,7 @@
-<x-app-layout>
-    <x-slot name="title">
-    - صفحه ورود
-    </x-slot>
-         <header>Login Form</header>
+   @extends('app')
+   
+   @section('main')
+            <header>فرم عضویت</header>
             <form action="#">
                <div class="field">
                   <input type="text" required placeholder="نام کاربری">
@@ -41,8 +40,4 @@
                   <i class="fab fa-instagram"><span>Instagram</span></i>
                </div>
             </div>
-            <div class="signup">
-               Don't have account?
-               <a href="#">Signup Now</a>
-            </div>
-</x-app-layout>
+   @endsection
