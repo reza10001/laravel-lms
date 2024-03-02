@@ -538,13 +538,16 @@ a:active,a:focus {
 	padding:15px 15px 30px 15px;
 	overflow:hidden;
 	text-align:center;
+                
+
 }
 .pagination a {
 	padding:5px 10px;
 	margin-right:2px;
-	background:#ccc;
-	color:#fff;
+	background: white;
+	color:gray;
 	text-decoration:blink;
+        border: 1px solid gray;
 }
 .pagination a:hover,.pagination .current {
 	padding:5px 10px;
@@ -772,6 +775,8 @@ a.more-link {
 	clear:both;
 	margin:0 0 1.5em;
 	word-spacing: 18px;
+               
+
 }
 /* Entry Footer */
 .entry-footer {

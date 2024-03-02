@@ -32,6 +32,6 @@ Route::middleware('auth')->group(function () {
 
 });
 
-Route::middleware('auth')->resource('/panel/users',UserController::class)->except(['show']);
+Route::middleware(['auth','admin'])->resource('/panel/users',UserController::class)->except(['show']);
 
 require __DIR__.'/auth.php';

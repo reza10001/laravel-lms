@@ -23,7 +23,7 @@
                @error('email')
                  <p class='error'>{{$message}}</p>
                @enderror   
-               <select name="role" class="text">
+               <select name="role" class="select">
                         <option value="user" selected>کاربر عادی</option>
                         <option value="author">نویسنده</option>
                         <option value="admin">مدیر</option>
