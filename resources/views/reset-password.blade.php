@@ -1,6 +1,7 @@
-   @extends('app')
-   
-   @section('main')
+<x-app-layout>
+    <x-slot name="title">
+        
+    </x-slot>
             <header>Login Form</header>
             <form action="#">
                <div class="field">
@@ -27,5 +28,5 @@
                Don't have account?
                <a href="/register">Signup Now</a>
             </div>
-   @endsection        
+</x-app-layout>     
 

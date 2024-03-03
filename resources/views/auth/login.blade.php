@@ -1,29 +1,24 @@
-   @extends('app')
-   
-   @section('main')
-            <header>فرم عضویت</header>
+<x-app-layout>.
+    <x-slot name="title">
+        
+    </x-slot>
+            <header>Login Form</header>
             <form action="#">
+                @csrf
                <div class="field">
                   <input type="text" required placeholder="نام کاربری">
                   <span class="fa fa-user"></span>
-               </div>
-
-               <div class="field space">
-                  <input type="password" class="pass-key" required placeholder="گذرواژه">
-                  <span class="fa fa-lock"></span>
-                  <span class="show">SHOW</span>
 
                </div>
                <div class="field space">
                   <input type="password" class="pass-key" required placeholder="گذرواژه">
+
                   <span class="fa fa-lock"></span>
                   <span class="show">SHOW</span>
 
                </div>
- 
- 
                <div class="pass">
-                  <a href="#">بازیابی رمز عبور؟</a>
+                  <a href="{{route('reset-pass')}}">بازیابی رمز عبور؟</a>
                </div>
                <div class="field">
                   <input type="submit" value="LOGIN">
@@ -40,4 +35,9 @@
                   <i class="fab fa-instagram"><span>Instagram</span></i>
                </div>
             </div>
-   @endsection
+            <div class="signup">
+               Don't have account?
+               <a href="/register">Signup Now</a>
+            </div>
+ </x-app-layout>    
+
