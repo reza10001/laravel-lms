@@ -45,21 +45,7 @@
                         <a href="edit-user.html" target="_blank" class="item-eye mlg-15" title="مشاهده"></a>
                         <a href="edit-user.html" class="item-edit " title="ویرایش"></a>
                     </td>
-                </tr>
-                <tr role="row" class="">
-                    <td><a href="">2</a></td>
-                    <td><a href="">محمد نیکو</a></td>
-                    <td>programming@gmail.com</td>
-                    <td>کاربر عادی</td>
-                    <td>1399/11/11</td>
-                    <td class="text-error">تایید نشده</td>
-                    <td>
-                        <a href="" class="item-delete mlg-15" title="حذف"></a>
-                        <a href="" class="item-confirm mlg-15" title="تایید"></a>
-                        <a href="" class="item-reject mlg-15" title="رد"></a>
-                        <a href=""{{route('users.edit',1)}}"" class="item-edit " title="ویرایش"></a>
-                    </td>
-                </tr>
+                </tr>               
                 </tbody>
             </table>
         </div>
