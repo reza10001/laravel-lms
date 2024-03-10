@@ -6,12 +6,16 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
+
+
 class UserController extends Controller
 {
 
     public function index()
     {
-        return view('panel.users.index');
+        $users = User::all();
+        return view('panel.users.index', compact('users'));
     }
 
  
@@ -35,16 +39,23 @@ class UserController extends Controller
     }
 
   
-    public function edit(string $id)
+    public function edit(User $user)
     {
-        //
+                return view('panel.users.edit', compact('user'));
     }
 
   
-    public function update(Request $request, string $id)
+    public function update(Request $request, User $user)
     {
-        //
-    }
+$request->validate([
+            'name' => 'required|string|max:50',
+            'email' => ['required','string','max:70',Rule::unique('users')->ignore($user->id)],
+            'role' => ['required','max:255']
+        ]);
+ $data = $request->only(['name','email','role']);
+       $user->update($data);
+       return redirect()->route('users.index');
+}
 
    
     public function destroy(string $id)

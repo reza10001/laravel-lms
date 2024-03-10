@@ -20,7 +20,9 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+         'role',
         'password',
+       
     ];
 
     /**
@@ -47,5 +49,8 @@ class User extends Authenticatable
         if($this->role === 'author') return 'نویسنده';
         if($this->role === 'admin') return 'مدیر';
         
+    }
+    public function getCreatedAtInJalali(){
+        return verta($this->created_at)->format('Y/m/d');
     }
 }
