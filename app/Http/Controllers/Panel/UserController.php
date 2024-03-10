@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
+use App\Http\Requests\Panel\User\CreateUserRequest;
+use App\Http\Requests\Panel\User\UpdateUserRequest;
 
 
 class UserController extends Controller
@@ -27,14 +29,13 @@ class UserController extends Controller
   
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:50',
-            'email' => 'required|string|max:70|unique:users',
-            'role' => 'required|max:255'
-        ]);
-        $data = $request->only(['name','email','role']);
+         $data = $request->validated();
         $data['password'] = Hash::make('password');
+
         User::create($data);
+
+        $request->session()->flash('status', 'کاربر به درستی ایجاد شد!');
+
         return redirect()->route('users.index');
     }
 
@@ -45,21 +46,21 @@ class UserController extends Controller
     }
 
   
-    public function update(Request $request, User $user)
+        public function update(UpdateUserRequest $request, User $user)
     {
-$request->validate([
-            'name' => 'required|string|max:50',
-            'email' => ['required','string','max:70',Rule::unique('users')->ignore($user->id)],
-            'role' => ['required','max:255']
-        ]);
- $data = $request->only(['name','email','role']);
-       $user->update($data);
-       return redirect()->route('users.index');
-}
+        $user->update(
+            $request->validated()
+        );     
+         $request->session()->flash('status', 'اطلاعات کاربر به درستی ویرایش شد!');
+
+        return redirect()->route('users.index');
+    }
 
    
-    public function destroy(string $id)
+    public function destroy(Request $request, User $user)
     {
-        //
+        $user->delete();
+        $request->session()->flash('status', 'کاربر مد نظر به درستی حذف شد!');
+        return back();
     }
 }

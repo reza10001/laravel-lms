@@ -39,10 +39,15 @@
                     <td>{{$user->getCreatedAtInJalali()}}</td>
                     <td class="text-success">تاییده شده</td>
                     <td>
-                        <a href="" class="item-delete mlg-15" title="حذف"></a>
-                        <a href="" class="item-confirm mlg-15" title="تایید"></a>
-                        <a href="" class="item-reject mlg-15" title="رد"></a>
+                        @if(auth()->user()->id !== $user->id && $user->role !== 'admin')
+                        <a href="{{ route('users.destroy', $user->id) }}" onclick="destroyUser(event, {{ $user->id }})" class="item-delete mlg-15" title="حذف"></a>
+                        @endif
                         <a href="{{route('users.edit',$user->id)}}" class="item-edit " title="ویرایش"></a>
+                        <form action="{{ route('users.destroy', $user->id) }}" method="post" id="destroy-user-{{ $user->id }}">
+                              @csrf
+                              @method('delete')
+                        </form>
+                        
                     </td>
                 </tr>      
                 @endforeach
@@ -52,7 +57,26 @@
     </div>
 </div>
 </body>
-<script src="js/jquery-3.4.1.min.js"></script>
-<script src="js/js.js"></script>
+
+  <x-slot name="scripts">
+      <script>
+        function destroyUser(event, id) {
+          event.preventDefault();
+          Swal.fire({
+          title: 'ایا مطمئن هستید این کار را میخواهید حذف کنید؟',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: 'rgb(221, 51, 51)',
+          cancelButtonColor: 'rgb(48, 133, 214)',
+          confirmButtonText: 'بله حذف کن!',
+          cancelButtonText: 'کنسل'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            document.getElementById(`destroy-user-${id}`).submit()
+          }
+        })
+        }
+      </script>
+    </x-slot>
 </html>
 </x-panel-layout>
