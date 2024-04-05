@@ -38,7 +38,7 @@
                                     <a href="{{route('categories.edit',$category->id)}}" class="item-edit " title="ویرایش"></a>
                                     <form action="{{ route('categories.destroy', $category->id) }}" method="POST" id="destroy-category-{{ $category->id }}">
                                       @csrf
-                                      @method('delete')
+                                      @method('DELETE')
                                     </form>
                                 </td>
                             </tr>

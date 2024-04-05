@@ -22,7 +22,7 @@ class User extends Authenticatable
         'email',
          'role',
         'password',
-       
+        'profile'      
     ];
 
     /**
@@ -52,5 +52,9 @@ class User extends Authenticatable
     }
     public function getCreatedAtInJalali(){
         return verta($this->created_at)->format('Y/m/d');
+    }
+    public function getProfileUrl()
+    {
+        return asset('images/users/' . $this->profile);
     }
 }

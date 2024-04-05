@@ -2,11 +2,11 @@
     <x-slot name="title">
         
     </x-slot>
-            <header>Login Form</header>
+            <header>ورود به حساب کاربری</header>
             <form action="{{route('login.store')}}" method="POST">
                 @csrf
                <div class="field">
-                  <input type="text" name="email" required placeholder="نام کاربری" />
+                  <input type="text" name="email" autocomplete="off" required placeholder="نام کاربری" />
                   <span class="fa fa-user"></span>
 
                </div>
@@ -17,7 +17,7 @@
                   </div>
                 
                <div class="field space">
-                  <input type="password" name="password" class="pass-key" required placeholder="گذرواژه" />
+                  <input type="password" name="password" class="pass-key" autocomplete="off" required placeholder="گذرواژه" />
 
                   <span class="fa fa-lock"></span>
                   <span class="show">SHOW</span>
@@ -36,20 +36,10 @@
                   <input type="submit" value="ورود" />
                </div>
             </form>
-            <div class="login">
-               Or login with
-            </div>
-            <div class="links">
-               <div class="facebook">
-                  <i class="fab fa-facebook-f"><span>Facebook</span></i>
-               </div>
-               <div class="instagram">
-                  <i class="fab fa-instagram"><span>Instagram</span></i>
-               </div>
-            </div>
+         
             <div class="signup">
                Don't have account?
-               <a href="/register">Signup Now</a>
+               <a href="/register">ثبت نام و عضویت در سایت</a>
             </div>
  </x-app-layout>    
 

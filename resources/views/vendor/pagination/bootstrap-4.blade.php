@@ -1,4 +1,4 @@
-@if ($paginator->hasPages())
+<!--@if ($paginator->hasPages())
     <nav>
         <ul class="pagination">
             {{-- Previous Page Link --}}
@@ -43,4 +43,39 @@
             @endif
         </ul>
     </nav>
+@endif
+-->
+@if ($paginator->hasPages())
+	<nav aria-label="Page navigation">
+                              
+                                            
+					  <ul class="pagination">
+                                              
+                                             @if ($paginator->hasMorePages())
+					    <li>                                             
+					      <a href="{{ $paginator->nextPageUrl() }}" aria-label="Previous">
+					        <span aria-hidden="true">&laquo;</span>
+					      </a>
+					    </li>
+                                            @endif
+                                            
+                 @if(is_array($element))
+                @foreach ($element as $page => $url)
+                    @if ($page == $paginator->currentPage())
+				<li class="active"><a href="#">{{ $page }}</a></li>
+                        @else                    
+				<li><a href="{{ $url }}">{{ $page }}</a></li>
+		    @endif
+                @endforeach
+                @endif
+					    @if (!$paginator->onFirstPage())
+                                            <li>                                                
+					      <a href="{{ $paginator->previousPageUrl() }}" aria-label="Next">
+					        <span aria-hidden="true">&raquo;</span>
+					      </a>
+					    </li>
+                                            @endif
+					  </ul>
+                
+					</nav>
 @endif

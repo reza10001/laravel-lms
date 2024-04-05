@@ -56,15 +56,5 @@
                   <input type="submit" value="ثبت نام">
                </div>
             </form>
-            <div class="login">
-               Or login with
-            </div>
-            <div class="links">
-               <div class="facebook">
-                  <i class="fab fa-facebook-f"><span>Facebook</span></i>
-               </div>
-               <div class="instagram">
-                  <i class="fab fa-instagram"><span>Instagram</span></i>
-               </div>
-            </div>
+      
  </x-app-layout> 

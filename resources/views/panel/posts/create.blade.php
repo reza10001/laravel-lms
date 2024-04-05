@@ -23,7 +23,7 @@
                     <p>دسته بندی های مقاله</p>
                     <ul class="tags">
                         <li class="tagAdd taglist">
-                            <input type="text" id="search-field">
+                            <input type="text" name="categories[]" id="search-field">
                         </li>
                     </ul>
                     @error('categories')

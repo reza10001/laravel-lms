@@ -11,7 +11,15 @@
 *:before, *:after {
     font-family: digikala;
 }
-
+@font-face {
+  font-family: Parastoo;
+  src: url('../fonts/Parastoo-Bold.eot');
+  src: url('../fonts/Parastoo-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Parastoo-Bold.woff') format('woff'),
+       url('../fonts/Parastoo.ttf') format('truetype'),
+        url('../fonts/Parastoo.woff') format('woff'),
+        url('../fonts/Parastoo.eot?#iefix') format('embedded-opentype');
+}
 input, button {
     font-family: irs;
 }
@@ -824,13 +832,7 @@ textarea {
     transition: all 200ms ease;
 }
 
-.header__logo {
-    height: 44px;
-    width: 200px;
-    background: url("../img/weblogo.png") no-repeat;
-    margin-top: -10px;
-    margin-right: 20px;
-}
+
 
 .logout:before {
     content: '\e10b';
