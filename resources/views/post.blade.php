@@ -11,7 +11,7 @@
 						<div class="display-tc animate-box" data-animate-effect="fadeInUp">
 							<span class="date-post">تاریخ:{{$post->getCreatedAtInJalali()}} </span>
 							<h1 class="mb30"><a href="#">{{$post->title}}</a></h1>
-							<p>by <a href="#" class="text-link"></a></p>
+							<!--<p>by <a href="#" class="text-link"></a></p>-->
 						</div>
 					</div>
 				</div>

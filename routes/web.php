@@ -46,6 +46,6 @@ Route::middleware(['auth', 'author'])->prefix('/panel')->group(function() {
 });
 Route::get('/post/{post:slug}',[ShowPostController::class,'show'])
         ->name('post.show');
-Route::get('/category/{category:slug}',[ShowPostCategoryController::class,'show'])
+Route::get('/category/{category:slug}}',[ShowPostCategoryController::class,'show'])
         ->name('category.show');
 require __DIR__.'/auth.php';

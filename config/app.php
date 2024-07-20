@@ -169,6 +169,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\ViewServiceProvider::class,
+        Mohammadv184\ArCaptcha\Laravel\ArCaptchaServiceProvider::class,
     ])->toArray(),
 
     /*
@@ -184,6 +185,8 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+    'ArCaptcha' => Mohammadv184\ArCaptcha\Laravel\Facade\ArCaptcha::class,
+
     ])->toArray(),
 
 ];

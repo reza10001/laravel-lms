@@ -34,7 +34,8 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required','min:8', 'confirmed', Rules\Password::defaults()],
-        ]);
+            'arcaptcha-token' => ['arcaptcha'],
+            ]);
 
         $user = User::create([
             'name' => $request->name,

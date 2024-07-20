@@ -29,6 +29,7 @@ class LoginRequest extends FormRequest
         return [
             'email' => ['required', 'string'],
             'password' => ['required', 'string','min:8','max:30'],
+              'arcaptcha-token' => ['arcaptcha','required'],
         ];
     }
 

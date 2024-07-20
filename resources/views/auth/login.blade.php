@@ -32,6 +32,16 @@
                <div class="pass">
                    <a href="{{route('password.request')}}">بازیابی رمز عبور؟</a>
                </div>
+  
+
+ 
+    @arcaptchaWidget
+<div class='space'>
+                      @error('arcaptcha-token')
+                      <p style='color: #D8000C; margin-bottom: 1rem'>{{$message}}</p>
+                      @enderror
+                  </div>
+   
                <div class="field">
                   <input type="submit" value="ورود" />
                </div>

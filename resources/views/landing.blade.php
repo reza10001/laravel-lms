@@ -10,7 +10,7 @@
 				<div class="col-md-12 text-right">
 					<div class="display-t">
 						<div class="display-tc animate-box font-italic" data-animate-effect="fadeInUp">
-                                                        <h1 style=" padding-right: 7px; border-right: 3px solid green;" class="mb30"><a href="#">سلام  ! به کمپ آموزش رایگان الکترونیک که بر پایه ی کتاب هنر الکترونیک بنا شده  خوش آمدید. </a></h1>
+                                                        <h1 style=" padding-right: 7px; border-right: 3px solid green;" class="mb30"><a href="#">سلام  ! به کمپ آموزش رایگان الکترونیک خوش آمدید. </a></h1>
                       
 
 							
@@ -34,7 +34,7 @@
                                                             <div class="entry-img"><img style="height:350px; width:100%" src="{{ $post->getBannerUrl() }}"/></div>
 								<div class="entry-desc">
 									<h3>{{$post->title}}</h3>
-									<p>{!! substr($post->content,0,30) !!}</p>
+									<p>{!! Illuminate\Support\Str::limit($post->content,30); !!}</p>
 								</div>
 							</a>
 							<a href="single.html" class="post-meta"> <span class="date-posted">{{ $post->getCreatedAtInJalali() }}</span></a>

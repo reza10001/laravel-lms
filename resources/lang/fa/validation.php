@@ -175,4 +175,5 @@ return [
 		"file" => "فایل",
 		"fullname" => "نام کامل"
     ],
+    'arcaptcha' => 'Hey!!! :attribute is wrong!',
 ];
